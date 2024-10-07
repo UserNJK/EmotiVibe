@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main Page - Music Face Analyzer</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="main-page" class="page">
+        <!-- Sidebar -->
+        <div id="sidebar">
+            <h2>Music Face Analyzer</h2>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Browse</a></li>
+                <li><a href="#">Your Library</a></li>
+            </ul>
+        </div>
+
+        <!-- Main Content -->
+        <div id="content">
+            <!-- Camera Permission Section -->
+            <div id="camera-section">
+                <h1>Camera Access</h1>
+                <div id="camera-controls">
+                    <button id="camera-button" class="btn-primary" onclick="requestCameraAccess()">Start Camera</button>
+                    <button id="take-picture" class="btn-secondary hidden" onclick="capturePhoto()">Take Picture</button>
+                    <button id="stop-camera" class="btn-secondary hidden" onclick="stopCamera()">Stop Camera</button>
+                </div>
+                <video id="camera-stream" width="320" height="240" class="hidden" autoplay></video>
+            </div>
+
+            <!-- Emotion Analysis Popup (hidden by default) -->
+            <div id="emotion-popup" class="popup hidden">
+                <p>Analyzing your emotion...</p>
+            </div>
+
+            <!-- Chatbot Popup -->
+            <div id="chatbot" class="hidden">
+                <div id="chatbox">
+                    <div class="chat-header">
+                        <h3>Emotion Bot</h3>
+                        <button class="close-btn" onclick="closeChatbot()">✖</button>
+                    </div>
+                    <div id="messages">
+                        <!-- Chat messages will appear here -->
+                    </div>
+                    <input type="text" id="chat-input" placeholder="Ask me anything!">
+                    <button onclick="sendMessage()">Send</button>
+                </div>
+            </div>
+
+            <!-- Custom Music Player Section -->
+            <div id="music-player">
+                <div class="now-playing">
+                    <div class="track-info">
+                        <img src="album-art.jpg" alt="Album Art" class="album-art">
+                        <div class="track-details">
+                            <p class="track-title">Song Title</p>
+                            <p class="track-artist">Artist Name</p>
+                        </div>
+                    </div>
+                    <div class="playback-controls">
+                        <button class="play-btn">▶️</button>
+                        <div class="progress-bar">
+                            <span class="progress-fill"></span>
+                        </div>
+                        <p class="time">0:30 / 3:45</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
