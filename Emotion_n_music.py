@@ -6,9 +6,9 @@ import webbrowser
 
 # Spotify OAuth configuration
 auth_manager = SpotifyOAuth(
-    client_id="4a500a69629b419da504a78778505917",
-    client_secret="87571a41c6634c8cb9367b1e0917adf0",
-    redirect_uri="https://b01190ed-a1f2-41b3-8dc1-52c4395e311e-00-10lbitnd9816r.pike.replit.dev/callback",  # Updated redirect URI
+    client_id="Your_client_ID",
+    client_secret="Your_client_secret",
+    redirect_uri="Your_replit_redirect/callback",  # Updated redirect URI
     scope="user-modify-playback-state user-read-playback-state"
 )
 
