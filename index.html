@@ -3,24 +3,80 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login - Music Face Analyzer</title>
+    <title>Main Page - EmotiVibe</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div id="login-page" class="page center-screen">
-        <div class="form-container">
-            <h1>Login to Music Face Analyzer</h1>
-            <form id="login-form" action="main.html" method="GET">
-                <label for="username">Username:</label>
-                <input type="text" id="username" name="username" placeholder="Enter your username" required>
-                
-                <label for="password">Password:</label>
-                <input type="password" id="password" name="password" placeholder="Enter your password" required>
-                
-                <button type="submit" class="btn-primary">Login</button>
-            </form>
-            <p>Don't have an account? <a href="signup.html">Sign up here</a></p>
+    <div id="main-page" class="page">
+        <!-- Sidebar -->
+        <div id="sidebar">
+            <h2>EmotiVibe</h2>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Browse</a></li>
+                <li><a href="#">Your Library</a></li>
+            </ul>
+        </div>
+
+        <!-- Main Content -->
+        <div id="content">
+            <!-- Camera Permission Section -->
+            <div id="camera-section">
+                <h1>Control Your Camera</h1>
+                <p>Enable camera access for emotion-based interactions.</p>
+                <div id="camera-controls">
+                    <button id="camera-button" class="btn-primary" onclick="requestCameraAccess()">Start Camera</button>
+                    <button id="take-picture" class="btn-secondary hidden" onclick="capturePhoto()">Take Picture</button>
+                    <button id="stop-camera" class="btn-secondary hidden" onclick="stopCamera()">Stop Camera</button>
+                </div>
+                <video id="camera-stream" width="320" height="240" class="hidden" autoplay></video>
+            </div>
+
+            <!-- Emotion Analysis Popup (hidden by default) -->
+            <div id="emotion-popup" class="popup hidden">
+                <p>Analyzing your emotion...</p>
+            </div>
+
+            <!-- Chatbot Popup -->
+            <div id="chatbot" class="hidden">
+                <div id="chatbox">
+                    <div class="chat-header">
+                        <h3>Emotion Bot</h3>
+                        <button class="close-btn" onclick="closeChatbot()">✖</button>
+                    </div>
+                    <div id="messages">
+                        <!-- Chat messages will appear here -->
+                    </div>
+                    <input type="text" id="chat-input" placeholder="Ask me anything!">
+                    <button onclick="sendMessage()">Send</button>
+                </div>
+            </div>
+
+            <!-- Custom Music Player Section -->
+            <div id="music-player">
+                <div class="now-playing">
+                    <div class="track-info">
+                        <img src="shapeofyouscreenshot.png" alt="Album Art" class="album-art">
+                        <div class="track-details">
+                            <p class="track-title">Shape of You</p>
+                            <p class="track-artist">Ed Sheeran</p>
+                        </div>
+                    </div>
+                    <div class="playback-controls">
+                        <button class="play-btn"><img src="icons8-rewind-button-round-50.png" alt="Rewind"></button>  
+                        <button class="play-btn"><img src="icons8-pause-button-50.png" alt="Pause"></button> 
+                        <button class="play-btn"><img src="icons8-fast-forward-round-50.png" alt="Fast Forward"></button>            
+
+                        <div class="progress-bar">
+                            <!-- Progress bar will display here -->
+                        </div>
+                        <p class="time">0:00</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
