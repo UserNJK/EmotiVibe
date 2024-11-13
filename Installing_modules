@@ -1,2 +1,1 @@
-!pip install fer
-!pip install spotipy
+pip install flask flask-cors spotipy fer opencv-python-headless
